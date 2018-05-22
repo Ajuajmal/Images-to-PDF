@@ -15,6 +15,6 @@ before_script:
 script:
    - chmod +x ./gradlew
    - ./gradlew assembleDebug assembleRelease
-   - "sbt clean coverage test"
    
-after_success: "sbt coveralls"
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
